@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="false" name="Suite">
+    <!--<listeners>
+        <listener class-name="org.utils.ExtentReport"></listener>
+    </listeners>
+    <parameter name="Browser" value="Chrome"></parameter>
+    <parameter name="URL" value="https://parabank.parasoft.com/parabank/index.htm"></parameter> -->
+    <test name="Test">
+        <groups>
+            <define name="cycle1">
+                <include name="smoke"></include>
+                <include name="regression"></include>
+            </define>
+            <define name="cycle2">
+                <include name="regression2"></include>
+            </define>
+            <run>
+               <include name="cycle2"></include>
+                <!--<exclude name="smoke"></exclude> -->
+            </run>
+        </groups>
+        <classes>
+            <class name="org.test.GroupTest"/>
+            <class name="org.test.GroupOneTest"/>
+        </classes>
+    </test>
+
+
+</suite>
